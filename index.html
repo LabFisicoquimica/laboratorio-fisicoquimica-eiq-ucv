@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laboratorio de Fisicoquímica</title>
-  <script src="/_sdk/element_sdk.js"></script>
   <style>
         body {
             box-sizing: border-box;
@@ -196,15 +195,15 @@
         }
 
         .slide-university {
-            background-image: url('https://lh3.googleusercontent.com/d/1MLdLyVr9dOnyZBOM3tYRv8-TAdxs2tcI');
+            background-image: url('img/Imagen%20de%20WhatsApp%202025-11-12%20a%20las%2020.00.01_f55308b9.jpg');
         }
 
         .slide-school {
-            background-image: url('https://lh3.googleusercontent.com/d/1azQ9vdbpyFvm-hVCLxPfkOi7HdATGK9J');
+            background-image: url('img/Imagen%20de%20WhatsApp%202025-11-12%20a%20las%2020.00.02_fd4ef9c1.jpg');
         }
 
         .slide-lab {
-            background-image: url('https://lh3.googleusercontent.com/d/1ng9ipAqs69iSU25vplvXvavFUb4naMqd');
+            background-image: url('img/Imagen%20de%20WhatsApp%202025-11-12%20a%20las%2020.07.37_5c534df2.jpg');
         }
 
         .banner-content {
@@ -360,12 +359,6 @@
             margin-top: 0;
         }
 
-        .course-description p {
-            color: #4a5568;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
         .preparadores-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -412,7 +405,7 @@
             margin-bottom: 5px;
         }
 
-        .preparador-schedule {
+        .preparador-role {
             color: #4a5568;
             font-size: 0.9rem;
             font-style: italic;
@@ -430,9 +423,8 @@
         }
 
         .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            display: flex;
+            justify-content: center;
             margin-bottom: 30px;
         }
 
@@ -442,19 +434,23 @@
             border-radius: 12px;
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
         }
 
         .schedule-day {
             font-weight: 700;
             color: #2d3748;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
         }
 
         .schedule-time {
             color: #0128e5;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
 
         .practices-table {
@@ -598,26 +594,6 @@
             gap: 10px;
         }
 
-        .material-link {
-            color: #0128e5;
-            text-decoration: none;
-            font-size: 0.95rem;
-            padding: 12px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            background: #f7fafc;
-            border: 1px solid #e2e8f0;
-            font-weight: 500;
-        }
-
-        .material-link:hover {
-            background: #0128e5;
-            color: white;
-            transform: translateX(5px);
-            box-shadow: 0 2px 8px rgba(1, 40, 229, 0.3);
-        }
-
-        /* Mobile Styles */
         @media (max-width: 768px) {
             .content-area {
                 padding: 20px;
@@ -646,7 +622,6 @@
             }
 
             .info-grid,
-            .schedule-grid,
             .video-grid,
             .materials-grid {
                 grid-template-columns: 1fr;
@@ -658,31 +633,29 @@
         }
     </style>
   <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
- <body><!-- Menu Toggle Button --> <button class="menu-toggle" onclick="toggleSidebar()">☰</button> <!-- Menu Overlay -->
+ <body>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button> 
   <div class="menu-overlay" id="menuOverlay" onclick="closeSidebar()"></div>
-  <div class="main-container"><!-- Sidebar Navigation -->
+  <div class="main-container">
    <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-     <div class="institution-name" id="universityName">
-      Universidad Central de Venezuela
-     </div>
-     <div class="faculty-name" id="facultyName">
-      Facultad de Ingeniería
-     </div>
-     <div class="school-name" id="schoolName">
-      Escuela de Ingeniería Química
-     </div>
-     <div class="course-title" id="courseTitle">
-      Laboratorio de Fisicoquímica
-     </div>
+     <div class="institution-name">Universidad Central de Venezuela</div>
+     <div class="faculty-name">Facultad de Ingeniería</div>
+     <div class="school-name">Escuela de Ingeniería Química</div>
+     <div class="course-title">Laboratorio de Fisicoquímica</div>
     </div>
-    <div class="nav-menu"><a class="nav-item active" onclick="showSection('informacion')">📋 Información</a> <a class="nav-item" onclick="showSection('programa')">📚 Programa</a> <a class="nav-item" onclick="showSection('horario')">🕐 Horario</a> <a class="nav-item" onclick="showSection('calendario')">📅 Calendario</a> <a class="nav-item" onclick="showSection('practicas')">🧪 Prácticas</a> <a class="nav-item" onclick="showSection('videos')">🎥 Videos</a>
+    <div class="nav-menu">
+      <a class="nav-item active" onclick="showSection('informacion')">📋 Información</a> 
+      <a class="nav-item" onclick="showSection('programa')">📚 Programa</a> 
+      <a class="nav-item" onclick="showSection('horario')">🕐 Horario</a> 
+      <a class="nav-item" onclick="showSection('calendario')">📅 Calendario</a> 
+      <a class="nav-item" onclick="showSection('practicas')">🧪 Prácticas</a> 
+      <a class="nav-item" onclick="showSection('videos')">🎥 Videos</a>
     </div>
-   </nav><!-- Main Content Area -->
-   <main class="content-area"><!-- Banner Carousel -->
+   </nav>
+   <main class="content-area">
     <div class="banner">
      <div class="banner-carousel">
       <div class="banner-slide slide-university active"></div>
@@ -698,282 +671,184 @@
       <div class="indicator" onclick="changeSlide(1)"></div>
       <div class="indicator" onclick="changeSlide(2)"></div>
      </div>
-    </div><!-- Información Section -->
+    </div>
+
     <section id="informacion" class="content-section active">
      <h2 class="section-title">Información del Curso</h2>
      <div class="info-grid">
       <div class="info-card">
-       <div class="info-icon">
-        👩‍🏫
-       </div>
+       <div class="info-icon">👩‍🏫</div>
        <div class="info-content">
-        <div class="info-label">
-         Profesora
-        </div>
-        <div class="info-value" id="professorName">
-         Adriana García
-        </div>
+        <div class="info-label">Profesora</div>
+        <div class="info-value">Adriana García</div>
        </div>
       </div>
       <div class="info-card">
-       <div class="info-icon">
-        📅
-       </div>
+       <div class="info-icon">📅</div>
        <div class="info-content">
-        <div class="info-label">
-         Semestre
-        </div>
-        <div class="info-value" id="semester">
-         2025-3
-        </div><button class="practice-link" onclick="openDriveFile('1tIg9Ke6f6fQjD4OBQCKM1XpgA_z-5CTB', 'Cronograma Académico 2025-3.pdf')" style="margin-top: 8px; font-size: 0.8rem; padding: 6px 10px;">📄 Ver Cronograma</button>
+        <div class="info-label">Semestre</div>
+        <div class="info-value">2026-1</div>
+        <a class="practice-link" href="docs/calendario%202026-1.pdf" target="_blank" style="margin-top: 8px; font-size: 0.8rem; padding: 6px 10px;">📄 Ver Calendario Académico</a>
        </div>
       </div>
       <div class="info-card">
-       <div class="info-icon">
-        📧
-       </div>
+       <div class="info-icon">📧</div>
        <div class="info-content">
-        <div class="info-label">
-         Contacto
-        </div>
-        <div class="info-value" id="contactInfo">
-         labfisicoquimicaeiqucv@gmail.com
-        </div>
+        <div class="info-label">Contacto</div>
+        <div class="info-value">labfisicoquimicaeiqucv@gmail.com</div>
        </div>
       </div>
      </div>
+
      <div class="course-description">
       <h3>Preparadores de Laboratorio</h3>
       <div class="preparadores-grid">
        <div class="preparador-card">
-        <div class="preparador-icon">
-         🧑‍🔬
-        </div>
+        <div class="preparador-icon">🧑‍🔬</div>
         <div class="preparador-info">
-         <div class="preparador-name" id="preparador1Name">
-          Daniel Carico
-         </div>
-         <div class="preparador-schedule">
-          Sección Lunes
-         </div>
+         <div class="preparador-name">Valeria Oliveros</div>
+         <div class="preparador-role">Preparadora de Laboratorio</div>
         </div>
        </div>
        <div class="preparador-card">
-        <div class="preparador-icon">
-         🧑‍🔬
-        </div>
+        <div class="preparador-icon">🧑‍🔬</div>
         <div class="preparador-info">
-         <div class="preparador-name" id="preparador2Name">
-          Genesis Bauza
-         </div>
-         <div class="preparador-schedule">
-          Sección Viernes
-         </div>
+         <div class="preparador-name">Genesis Bauza</div>
+         <div class="preparador-role">Preparadora de Laboratorio</div>
         </div>
        </div>
        <div class="preparador-card">
-        <div class="preparador-icon">
-         🧑‍🔬
-        </div>
+        <div class="preparador-icon">🧑‍🔬</div>
         <div class="preparador-info">
-         <div class="preparador-name" id="preparador3Name">
-          Oriannys Alfonzo
-         </div>
-         <div class="preparador-schedule">
-          Sección Viernes
-         </div>
+         <div class="preparador-name">Cristina Ramirez</div>
+         <div class="preparador-role">Preparadora de Laboratorio</div>
         </div>
        </div>
        <div class="preparador-card">
-        <div class="preparador-icon">
-         🧑‍🔬
-        </div>
+        <div class="preparador-icon">🧑‍🔬</div>
         <div class="preparador-info">
-         <div class="preparador-name" id="preparador4Name">
-          Leonardo Méndez
-         </div>
-         <div class="preparador-schedule">
-          Sección Lunes
-         </div>
+         <div class="preparador-name">Oriannys Alfonzo</div>
+         <div class="preparador-role">Preparadora de Laboratorio</div>
         </div>
        </div>
       </div>
      </div>
+
      <div class="course-description">
-      <h3>Descripción del Curso</h3>
-      <p style="color: #4a5568; font-style: italic; text-align: center; margin: 20px 0;">Disponible próximamente</p>
-      <h3>Metodología</h3>
-      <p style="color: #4a5568; font-style: italic; text-align: center; margin: 20px 0;">Disponible próximamente</p>
       <h3>Evaluación</h3>
-      <p style="color: #4a5568; font-style: italic; text-align: center; margin: 20px 0;">Disponible próximamente</p>
+      <p style="color: #4a5568; line-height: 1.7; margin-bottom: 20px;">
+       La evaluación del laboratorio consta de diferentes actividades prácticas y teóricas distribuidas a lo largo del semestre según los siguientes porcentajes:
+      </p>
+      <table class="practices-table" style="max-width: 500px; margin: 20px auto;">
+       <thead>
+        <tr>
+         <th>Actividad</th>
+         <th>Porcentaje</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td><strong>Preinforme</strong></td>
+         <td>10%</td>
+        </tr>
+        <tr>
+         <td><strong>Quiz</strong></td>
+         <td>10%</td>
+        </tr>
+        <tr>
+         <td><strong>Informe</strong></td>
+         <td>70%</td>
+        </tr>
+        <tr>
+         <td><strong>Examen Final</strong></td>
+         <td>10%</td>
+        </tr>
+       </tbody>
+      </table>
+      <p style="color: #2d3748; font-weight: 600; margin-top: 20px; background: #fff5f5; padding: 15px; border-left: 4px solid #7b0001; border-radius: 4px; line-height: 1.6;">
+       ⚠️ <strong>Nota importante:</strong> Toda esta ponderación acumulada representa el <strong>30% de la asignatura completa</strong>. Considere que se reprueba el laboratorio (y por consiguiente la asignatura completa) al acumular <strong>dos (2) quices reprobados</strong>.
+      </p>
      </div>
-    </section><!-- Programa Section -->
+    </section>
+
     <section id="programa" class="content-section">
      <h2 class="section-title">Programa Académico</h2>
-     <div class="course-description">
-      <h3>Objetivos del Curso</h3>
-      <p style="color: #4a5568; font-style: italic; text-align: center; margin: 20px 0;">Disponible próximamente</p>
-     </div>
      <div class="program-content">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; margin-top: 30px; flex-wrap: wrap; gap: 15px;">
-       <h3 style="color: #2d3748; font-size: 1.3rem; margin: 0;">Contenido Programático</h3><button class="practice-link" onclick="openDriveFile('1YhzAUsEo_tXsxsQvE_ZVwqdgOxgP5K76', 'Programa Detallado del Laboratorio.pdf')" style="font-size: 0.9rem; padding: 10px 15px; margin: 0;">📄 Ver Programa Completo</button>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; margin-top: 10px; flex-wrap: wrap; gap: 15px;">
+       <h3 style="color: #2d3748; font-size: 1.4rem; margin: 0; font-weight: 700;">Contenido Programático</h3>
       </div>
       <p style="color: #4a5568; margin-bottom: 20px; font-weight: 600;">El laboratorio consta de siete prácticas:</p>
       <div class="unit">
-       <div class="unit-title">
-        Práctica 1 (P1): Adsorción
-       </div>
-       <div class="unit-topics">
-        Estudio de los fenómenos de adsorción física y química, isotermas de adsorción y aplicaciones industriales.
-       </div>
+       <div class="unit-title">Práctica 1 (P1): Adsorción</div>
+       <div class="unit-topics">Estudio de los fenómenos de adsorción física y química, isotermas de adsorción y aplicaciones industriales.</div>
       </div>
       <div class="unit">
-       <div class="unit-title">
-        Práctica 2 (P2): Cinética
-       </div>
-       <div class="unit-topics">
-        Determinación de velocidades de reacción, órdenes de reacción y constantes cinéticas.
-       </div>
+       <div class="unit-title">Práctica 2 (P2): Cinética</div>
+       <div class="unit-topics">Determinación de velocidades de reacción, órdenes de reacción y constantes cinéticas.</div>
       </div>
       <div class="unit">
-       <div class="unit-title">
-        Práctica 3 (P3): Electrogravimetría
-       </div>
-       <div class="unit-topics">
-        Técnicas electroquímicas para la determinación cuantitativa de metales mediante deposición electrolítica.
-       </div>
+       <div class="unit-title">Práctica 3 (P3): Electrogravimetría</div>
+       <div class="unit-topics">Técnicas electroquímicas para la determinación cuantitativa de metales mediante deposición electrolítica.</div>
       </div>
       <div class="unit">
-       <div class="unit-title">
-        Práctica 4 (P4): Diagramas Ternarios
-       </div>
-       <div class="unit-topics">
-        Construcción e interpretación de diagramas de equilibrio de sistemas de tres componentes.
-       </div>
+       <div class="unit-title">Práctica 4 (P4): Diagramas Ternarios</div>
+       <div class="unit-topics">Construcción e interpretación de diagramas de equilibrio de sistemas de tres componentes.</div>
       </div>
       <div class="unit">
-       <div class="unit-title">
-        Práctica 5 (P5): Caracterización de Crudos
-       </div>
-       <div class="unit-topics">
-        Análisis fisicoquímico de keroseno: determinación de densidad, viscosidad y composición.
-       </div>
+       <div class="unit-title">Práctica 5 (P5): Caracterización de Crudos</div>
+       <div class="unit-topics">Análisis fisicoquímico de keroseno: determinación de densidad, viscosidad y composición.</div>
       </div>
       <div class="unit">
-       <div class="unit-title">
-        Práctica 6 (P6): Calor de Combustión
-       </div>
-       <div class="unit-topics">
-        Determinación experimental del poder calorífico de combustibles mediante calorimetría de bomba.
-       </div>
+       <div class="unit-title">Práctica 6 (P6): Calor de Combustión</div>
+       <div class="unit-topics">Determinación experimental del poder calorífico de combustibles mediante calorimetría de bomba.</div>
       </div>
       <div class="unit">
-       <div class="unit-title">
-        Práctica 7 (P7): Cromatografía de Gases
-       </div>
-       <div class="unit-topics">
-        Separación e identificación de compuestos orgánicos mediante técnicas cromatográficas.
-       </div>
+       <div class="unit-title">Práctica 7 (P7): Cromatografía de Gases</div>
+       <div class="unit-topics">Separación e identificación de compuestos orgánicos mediante técnicas cromatográficas.</div>
       </div>
      </div>
+
      <div class="course-description">
       <h3>Material Adicional del Laboratorio</h3>
       <div class="materials-grid">
        <div class="material-category">
         <h4 class="material-category-title">📋 Guías de Informes</h4>
-        <div class="material-links"><button class="practice-link" onclick="openDriveFile('1jw9_IJ_dS3Upr3CDwN-rar9yGobUjg7T', 'Guías de Informes.pptx')" style="width: 100%; margin-bottom: 10px; text-align: center;">📄 Ver Guías de Informes</button>
-        </div>
-       </div>
-       <div class="material-category">
-        <h4 class="material-category-title">📝 Preinformes</h4>
         <div class="material-links">
-         <p style="color: #4a5568; font-style: italic; text-align: center; margin: 10px 0;">Material disponible próximamente</p>
-        </div>
-       </div>
-       <div class="material-category">
-        <h4 class="material-category-title">🛡️ Seguridad</h4>
-        <div class="material-links">
-         <p style="color: #4a5568; font-style: italic; text-align: center; margin: 10px 0;">Material disponible próximamente</p>
-        </div>
-       </div>
-       <div class="material-category">
-        <h4 class="material-category-title">🔧 Instrumentación</h4>
-        <div class="material-links">
-         <p style="color: #4a5568; font-style: italic; text-align: center; margin: 10px 0;">Material disponible próximamente</p>
+          <a class="practice-link" href="docs/normas%20preinformes.pdf" target="_blank" style="text-align: center;">📄 Ver Normas de Preinformes</a>
         </div>
        </div>
        <div class="material-category">
         <h4 class="material-category-title">📚 Referencias Bibliográficas</h4>
-        <div class="material-links"><button class="practice-link" onclick="openDriveFile('1LucgzKgi7hkkxc1JqeJN7Xcg9KTq8MmB', 'Fundamentos de Fisicoquímica - Maron-Prutton (1993).pdf')" style="width: 100%; margin-bottom: 8px; text-align: center;">📖 Fundamentos de Fisicoquímica - Maron-Prutton (1993)</button> <button class="practice-link" onclick="openDriveFile('1GYqHaqvG2w35BqI8XcW-vO62s863GxYU', 'Principios de Fisicoquímica - Levine (2009).pdf')" style="width: 100%; margin-bottom: 10px; text-align: center;">📖 Principios de Fisicoquímica - Levine (2009)</button>
+        <div class="material-links">
+          <a class="practice-link" href="https://drive.google.com/file/d/1VeXUOBTxiTtDFBjVAhS0Ns3kfRea_JTf/view?usp=sharing" target="_blank" style="margin-bottom: 8px; text-align: center;">📖 Fundamentos de Fisicoquímica - Maron-Prutton</a> 
+          <a class="practice-link" href="https://drive.google.com/file/d/1JRzknwJWw828eLjABruQxgVYYfsyof5-/view?usp=sharing" target="_blank" style="text-align: center;">📖 Principios de Fisicoquímica - Levine</a>
         </div>
        </div>
       </div>
      </div>
-    </section><!-- Horario Section -->
+    </section>
+
     <section id="horario" class="content-section">
-     <h2 class="section-title">Horario</h2>
-     <div class="calendar-subtitle">
-      Sección Lunes
-     </div>
+     <h2 class="section-title">Horario de Clases</h2>
+     <div class="calendar-subtitle">Semestre 2026-1</div>
      <div class="schedule-grid">
       <div class="schedule-card">
-       <div class="schedule-day">
-        Lunes
-       </div>
-       <div class="schedule-time">
-        8:00 AM - 1:00 PM
-       </div>
-       <div>
-        Laboratorio
-       </div>
-      </div>
-      <div class="schedule-card">
-       <div class="schedule-day">
-        Jueves
-       </div>
-       <div class="schedule-time">
-        Explicación de Prácticas
-       </div>
-       <div></div>
+       <div class="schedule-day">Lunes</div>
+       <div class="schedule-time">8:00 AM - 1:00 PM</div>
+       <div style="font-weight: 500; color: #4a5568;">Laboratorio de Fisicoquímica</div>
       </div>
      </div>
-     <div class="calendar-subtitle">
-      Sección Viernes
-     </div>
-     <div class="schedule-grid">
-      <div class="schedule-card">
-       <div class="schedule-day">
-        Viernes
-       </div>
-       <div class="schedule-time">
-        8:00 AM - 1:00 PM
-       </div>
-       <div>
-        Laboratorio
-       </div>
-      </div>
-      <div class="schedule-card">
-       <div class="schedule-day">
-        Miércoles
-       </div>
-       <div class="schedule-time">
-        Explicación de Prácticas
-       </div>
-       <div></div>
-      </div>
-     </div>
-    </section><!-- Calendario Section -->
+    </section>
+
     <section id="calendario" class="content-section">
      <h2 class="section-title">Calendario de Prácticas</h2>
-     <div class="calendar-subtitle">
-      Sección Lunes
+     <div class="calendar-subtitle">Cronograma Oficial</div>
+     <div style="text-align: center; padding: 30px 10px;">
+       <p style="color: #4a5568; margin-bottom: 20px; font-size: 1.1rem;">Consulta las fechas de ejecución de prácticas, entregas y evaluaciones del semestre 2026-1.</p>
+       <a class="practice-link" href="docs/calendario%202026-1.pdf" target="_blank" style="font-size: 1.1rem; padding: 12px 25px; background: #0128e5; color: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(1,40,229,0.2);">📅 Abrir Calendario Académico 2026-1</a>
      </div>
-     <p style="color: #4a5568; font-style: italic; text-align: center; margin: 30px 0; font-size: 1.1rem;">Disponible próximamente</p>
-     <div class="calendar-subtitle">
-      Sección Viernes
-     </div>
-     <p style="color: #4a5568; font-style: italic; text-align: center; margin: 30px 0; font-size: 1.1rem;">Disponible próximamente</p>
-    </section><!-- Prácticas Section -->
+    </section>
+
     <section id="practicas" class="content-section">
      <h2 class="section-title">Guías de Prácticas</h2>
      <table class="practices-table">
@@ -981,152 +856,106 @@
        <tr>
         <th>Práctica</th>
         <th>Título</th>
-        <th>Material</th>
+        <th>Material de Estudio</th>
        </tr>
       </thead>
       <tbody>
        <tr>
         <td>1</td>
         <td>Adsorción</td>
-        <td><button class="practice-link" onclick="openDriveFile('1haBs43h08jfy1ieHcxHaYy6X6tTSLKjH', 'Guía Adsorción.pdf')">📄 Ver Guía Adsorción.pdf</button></td>
+        <td><a class="practice-link" href="docs/p1.pdf" target="_blank">📄 Ver Guía Adsorción</a></td>
        </tr>
        <tr>
         <td>2</td>
         <td>Cinética</td>
-        <td><button class="practice-link" onclick="openDriveFile('1xD9VcR_Iz_98VSXGUm9SbbSLKSfRWvsz', 'Guía Cinética.pdf')">📄 Ver Guía Cinética.pdf</button></td>
+        <td><a class="practice-link" href="docs/p2.pdf" target="_blank">📄 Ver Guía Cinética</a></td>
        </tr>
        <tr>
         <td>3</td>
         <td>Electrogravimetría</td>
-        <td><button class="practice-link" onclick="openDriveFile('1ZKHEKgp6lJwJDZvLHAIB60w2SoonFF-P', 'Guía Electrogravimetría.pdf')">📄 Ver Guía Electrogravimetría.pdf</button></td>
+        <td><a class="practice-link" href="docs/p3.pdf" target="_blank">📄 Ver Guía Electrogravimetría</a></td>
        </tr>
        <tr>
         <td>4</td>
         <td>Diagramas Ternarios</td>
-        <td><button class="practice-link" onclick="openDriveFile('1V1xNrnCSkTfcWiUh1MV6HJWw8AX2SS5G', 'Guía Diagramas Ternarios.pdf')">📄 Ver Guía Diagramas Ternarios.pdf</button></td>
+        <td><a class="practice-link" href="docs/p4.pdf" target="_blank">📄 Ver Guía Diagramas Ternarios</a></td>
        </tr>
        <tr>
         <td>5</td>
         <td>Caracterización de Crudos</td>
-        <td><button class="practice-link" onclick="openDriveFile('17kdFmguMi3uZU3N560U5dBqzhVxOdTrA', 'Guía Caracterización de Crudos.pdf')">📄 Ver Guía Caracterización de Crudos.pdf</button></td>
+        <td><a class="practice-link" href="docs/p5.pdf" target="_blank">📄 Ver Guía Caracterización de Crudos</a></td>
        </tr>
        <tr>
         <td>6</td>
         <td>Calor de Combustión</td>
-        <td><button class="practice-link" onclick="openDriveFile('11ZKkvxmanbRHQAO2b6ypPZ4DJqBxniSA', 'Guía Calor de Combustión.pdf')">📄 Ver Guía Calor de Combustión.pdf</button></td>
+        <td><a class="practice-link" href="docs/p6.pdf" target="_blank">📄 Ver Guía Calor de Combustión</a></td>
        </tr>
        <tr>
         <td>7</td>
         <td>Cromatografía de Gases</td>
-        <td><button class="practice-link" onclick="openDriveFile('1ykCGq-TL4r3m6z2ShLxDeB1z8CgbD2p1', 'Guía Cromatografía Parte 1.pdf')">📄 Ver Guía Cromatografía Parte 1.pdf</button><br><button class="practice-link" onclick="openDriveFile('1ibeMSF_0ziB4bf9F5u2R5ZBBC_oLgDXA', 'Guía Cromatografía Parte 2.pdf')">📄 Ver Guía Cromatografía Parte 2.pdf</button></td>
+        <td>
+          <a class="practice-link" href="docs/p7.1.pdf" target="_blank">📄 Parte 1</a> | 
+          <a class="practice-link" href="docs/p7.2.pdf" target="_blank">📄 Parte 2</a>
+        </td>
        </tr>
       </tbody>
      </table>
-    </section><!-- Videos Section -->
+    </section>
+
     <section id="videos" class="content-section">
      <h2 class="section-title">Videos Explicativos</h2>
      <div class="video-grid">
       <div class="video-card">
-       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="openDriveVideo('1chXw1pG9ub47qOosNOOFNT014Kooooiv', 'Práctica 1 - Adsorción')">
+       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="window.open('https://drive.google.com/file/d/1HbDCn4xXWt9nlYM9mWZzeH91RL5-OUD5/view?usp=sharing', '_blank')">
         <div style="text-align: center; color: white;">
-         <div style="font-size: 3rem; margin-bottom: 10px;">
-          ▶️
-         </div>
-         <div style="font-weight: 600;">
-          Ver Video
-         </div>
+         <div style="font-size: 3rem; margin-bottom: 10px;">▶️</div>
+         <div style="font-weight: 600;">Ver Video</div>
         </div>
        </div>
-       <div class="video-title" id="video1Title">
-        Práctica 1 - Adsorción
-       </div>
+       <div class="video-title">Práctica 1 - Adsorción</div>
       </div>
       <div class="video-card">
-       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="openDriveVideo('1lNgqlg5Otm-aqxsN66VSCc6Bh6fQMBlP', 'Práctica 2 - Cinética')">
+       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="window.open('https://drive.google.com/file/d/1IHOdMWlXT_wN_vTyzHfBEKgJtnYuKOpG/view?usp=sharing', '_blank')">
         <div style="text-align: center; color: white;">
-         <div style="font-size: 3rem; margin-bottom: 10px;">
-          ▶️
-         </div>
-         <div style="font-weight: 600;">
-          Ver Video
-         </div>
+         <div style="font-size: 3rem; margin-bottom: 10px;">▶️</div>
+         <div style="font-weight: 600;">Ver Video</div>
         </div>
        </div>
-       <div class="video-title" id="video2Title">
-        Práctica 2 - Cinética
-       </div>
+       <div class="video-title">Práctica 2 - Cinética</div>
       </div>
       <div class="video-card">
-       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="openDriveVideo('1-qP8awBnJQkdvqBT8-iPEintOtwDQqW-', 'Práctica 3 - Electrogravimetría')">
+       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="window.open('https://drive.google.com/file/d/19I9Od07cWMdBdSE808rnCiDg_ZU8SNBs/view?usp=sharing', '_blank')">
         <div style="text-align: center; color: white;">
-         <div style="font-size: 3rem; margin-bottom: 10px;">
-          ▶️
-         </div>
-         <div style="font-weight: 600;">
-          Ver Video
-         </div>
+         <div style="font-size: 3rem; margin-bottom: 10px;">▶️</div>
+         <div style="font-weight: 600;">Ver Video</div>
         </div>
        </div>
-       <div class="video-title" id="video3Title">
-        Práctica 3 - Electrogravimetría
-       </div>
+       <div class="video-title">Práctica 3 - Electrogravimetría</div>
       </div>
       <div class="video-card">
-       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="openDriveVideo('1de1jFYwWDrV5zWpJQThtyRcdmihcKjME', 'Práctica 4 - Diagramas Ternarios')">
+       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="window.open('https://drive.google.com/file/d/1Gx-_hAGRjx3bUZ5d4awXd5KoZCrh6q7a/view?usp=sharing', '_blank')">
         <div style="text-align: center; color: white;">
-         <div style="font-size: 3rem; margin-bottom: 10px;">
-          ▶️
-         </div>
-         <div style="font-weight: 600;">
-          Ver Video
-         </div>
+         <div style="font-size: 3rem; margin-bottom: 10px;">▶️</div>
+         <div style="font-weight: 600;">Ver Video</div>
         </div>
        </div>
-       <div class="video-title" id="video4Title">
-        Práctica 4 - Diagramas Ternarios
-       </div>
+       <div class="video-title">Práctica 4 - Diagramas Ternarios</div>
       </div>
       <div class="video-card">
-       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="openDriveVideo('1FSgAEPNhvfPOJoytO_PETxJ26FHzJ-x_', 'Práctica 5 - Caracterización de Crudos')">
+       <div class="video-placeholder" style="width: 100%; height: 200px; background: linear-gradient(135deg, #0128e5, #7b0001); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; cursor: pointer;" onclick="window.open('https://drive.google.com/file/d/14DdG0ZtljtTwLHEkExICxdGQhXKraVwO/view?usp=sharing', '_blank')">
         <div style="text-align: center; color: white;">
-         <div style="font-size: 3rem; margin-bottom: 10px;">
-          ▶️
-         </div>
-         <div style="font-weight: 600;">
-          Ver Video
-         </div>
+         <div style="font-size: 3rem; margin-bottom: 10px;">▶️</div>
+         <div style="font-weight: 600;">Ver Video</div>
         </div>
        </div>
-       <div class="video-title" id="video5Title">
-        Práctica 5 - Caracterización de Crudos
-       </div>
+       <div class="video-title">Práctica 5 - Caracterización de Crudos</div>
       </div>
      </div>
     </section>
    </main>
   </div>
-  <script>
-        // Configuration object
-        const defaultConfig = {
-            university_name: "Universidad Central de Venezuela",
-            faculty_name: "Facultad de Ingeniería",
-            school_name: "Escuela de Ingeniería Química",
-            course_title: "Laboratorio de Fisicoquímica",
-            professor_name: "Adriana García",
-            semester: "2025-3",
-            contact_info: "labfisicoquimicaeiqucv@gmail.com",
-            preparador1_name: "Daniel Carico",
-            preparador2_name: "Genesis Bauza",
-            preparador3_name: "Oriannys Alfonso",
-            preparador4_name: "Leonardo Méndez",
-            video1_title: "Práctica 1 - Adsorción",
-            video2_title: "Práctica 2 - Cinética",
-            video3_title: "Práctica 3 - Electrogravimetría",
-            video4_title: "Práctica 4 - Diagramas Ternarios",
-            video5_title: "Práctica 5 - Caracterización de Crudos",
-            video6_title: "Seguridad en el Laboratorio"
-        };
 
+  <script>
         // Banner carousel functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.banner-slide');
@@ -1155,11 +984,11 @@
             },
             'programa': {
                 title: 'Programa Académico 📚',
-                subtitle: 'Explora el contenido y objetivos de cada práctica'
+                subtitle: 'Explora el contenido de cada una de las prácticas'
             },
             'horario': {
                 title: 'Horarios de Clase 🕐',
-                subtitle: 'Consulta los días y horas de laboratorio'
+                subtitle: 'Consulta el día y horas de laboratorio'
             },
             'calendario': {
                 title: 'Calendario de Prácticas 📅',
@@ -1190,14 +1019,10 @@
             document.getElementById(sectionId).classList.add('active');
             event.target.classList.add('active');
 
-            // Update banner content based on section
             updateBannerContent(sectionId);
-
-            // Close sidebar after selection
             closeSidebar();
         }
 
-        // Update banner content function
         function updateBannerContent(sectionId) {
             const bannerTitle = document.getElementById('bannerTitle');
             const bannerSubtitle = document.getElementById('bannerSubtitle');
@@ -1228,189 +1053,11 @@
             overlay.classList.remove('active');
         }
 
-        // Close sidebar when pressing Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeSidebar();
             }
         });
-
-        // Element SDK implementation
-        const element = {
-            defaultConfig: defaultConfig,
-            
-            onConfigChange: async (config) => {
-                document.getElementById('universityName').textContent = config.university_name || defaultConfig.university_name;
-                document.getElementById('facultyName').textContent = config.faculty_name || defaultConfig.faculty_name;
-                document.getElementById('schoolName').textContent = config.school_name || defaultConfig.school_name;
-                document.getElementById('courseTitle').textContent = config.course_title || defaultConfig.course_title;
-                document.getElementById('professorName').textContent = config.professor_name || defaultConfig.professor_name;
-                document.getElementById('semester').textContent = config.semester || defaultConfig.semester;
-                document.getElementById('contactInfo').textContent = config.contact_info || defaultConfig.contact_info;
-                
-                document.getElementById('preparador1Name').textContent = config.preparador1_name || defaultConfig.preparador1_name;
-                document.getElementById('preparador2Name').textContent = config.preparador2_name || defaultConfig.preparador2_name;
-                document.getElementById('preparador3Name').textContent = config.preparador3_name || defaultConfig.preparador3_name;
-                document.getElementById('preparador4Name').textContent = config.preparador4_name || defaultConfig.preparador4_name;
-                
-                document.getElementById('video1Title').textContent = config.video1_title || defaultConfig.video1_title;
-                document.getElementById('video2Title').textContent = config.video2_title || defaultConfig.video2_title;
-                document.getElementById('video3Title').textContent = config.video3_title || defaultConfig.video3_title;
-                document.getElementById('video4Title').textContent = config.video4_title || defaultConfig.video4_title;
-                document.getElementById('video5Title').textContent = config.video5_title || defaultConfig.video5_title;
-            },
-
-            mapToCapabilities: (config) => ({
-                recolorables: [],
-                borderables: [],
-                fontEditable: undefined,
-                fontSizeable: undefined
-            }),
-
-            mapToEditPanelValues: (config) => new Map([
-                ["university_name", config.university_name || defaultConfig.university_name],
-                ["faculty_name", config.faculty_name || defaultConfig.faculty_name],
-                ["school_name", config.school_name || defaultConfig.school_name],
-                ["course_title", config.course_title || defaultConfig.course_title],
-                ["professor_name", config.professor_name || defaultConfig.professor_name],
-                ["semester", config.semester || defaultConfig.semester],
-                ["contact_info", config.contact_info || defaultConfig.contact_info],
-                ["preparador1_name", config.preparador1_name || defaultConfig.preparador1_name],
-                ["preparador2_name", config.preparador2_name || defaultConfig.preparador2_name],
-                ["preparador3_name", config.preparador3_name || defaultConfig.preparador3_name],
-                ["preparador4_name", config.preparador4_name || defaultConfig.preparador4_name],
-                ["video1_title", config.video1_title || defaultConfig.video1_title],
-                ["video2_title", config.video2_title || defaultConfig.video2_title],
-                ["video3_title", config.video3_title || defaultConfig.video3_title],
-                ["video4_title", config.video4_title || defaultConfig.video4_title],
-                ["video5_title", config.video5_title || defaultConfig.video5_title],
-                ["video6_title", config.video6_title || defaultConfig.video6_title]
-            ])
-        };
-
-        function closeModal(button) {
-            const modal = button.closest('[style*="position: fixed"]');
-            if (modal) {
-                modal.remove();
-            }
-        }
-
-        function openDriveFile(fileId, fileName) {
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.7);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 10000;
-            `;
-            
-            const modalContent = document.createElement('div');
-            modalContent.style.cssText = `
-                background: white;
-                padding: 30px;
-                border-radius: 15px;
-                max-width: 500px;
-                width: 90%;
-                text-align: center;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            `;
-            
-            modalContent.innerHTML = `
-                <h3 style="color: #2d3748; margin-bottom: 20px;">📄 ${fileName}</h3>
-                <p style="color: #4a5568; margin-bottom: 25px; line-height: 1.6;">
-                    Para acceder al archivo, haz clic en el botón de abajo. Se abrirá en una nueva pestaña donde podrás ver y descargar el documento.
-                </p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <button onclick="window.open('https://drive.google.com/file/d/${fileId}/view', '_blank')" 
-                            style="background: #0128e5; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
-                        🔗 Abrir Archivo
-                    </button>
-                    <button onclick="closeModal(this)" 
-                            style="background: #e2e8f0; color: #4a5568; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
-                        ✕ Cerrar
-                    </button>
-                </div>
-                <p style="color: #718096; font-size: 0.85rem; margin-top: 20px; font-style: italic;">
-                    💡 Tip: Una vez en Google Drive, puedes descargar el archivo usando el botón de descarga
-                </p>
-            `;
-            
-            modal.appendChild(modalContent);
-            document.body.appendChild(modal);
-            
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.remove();
-                }
-            });
-        }
-
-        function openDriveVideo(fileId, videoTitle) {
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.7);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 10000;
-            `;
-            
-            const modalContent = document.createElement('div');
-            modalContent.style.cssText = `
-                background: white;
-                padding: 30px;
-                border-radius: 15px;
-                max-width: 450px;
-                width: 90%;
-                text-align: center;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            `;
-            
-            modalContent.innerHTML = `
-                <h3 style="color: #2d3748; margin-bottom: 20px;">🎥 ${videoTitle}</h3>
-                <p style="color: #4a5568; margin-bottom: 25px; line-height: 1.6;">
-                    Haz clic en "Ver Video" para abrir el video en Google Drive donde podrás reproducirlo sin problemas.
-                </p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <button onclick="window.open('https://drive.google.com/file/d/${fileId}/view', '_blank')" 
-                            style="background: #0128e5; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
-                        ▶️ Ver Video
-                    </button>
-                    <button onclick="closeModal(this)" 
-                            style="background: #e2e8f0; color: #4a5568; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
-                        ✕ Cerrar
-                    </button>
-                </div>
-            `;
-            
-            modal.appendChild(modalContent);
-            document.body.appendChild(modal);
-            
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.remove();
-                }
-            });
-        }
-
-        if (window.elementSdk) {
-            window.elementSdk.init(element);
-        }
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99e30fc4a047b6ac',t:'MTc2MzA4NzE2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </script>
+ </body>
 </html>
-
-
-
-
